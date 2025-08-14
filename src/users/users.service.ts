@@ -36,12 +36,7 @@ export class UsersService {
 
   createUser(createUserdto: CreateUserDto) {
     let id = v4();
-    const newUser = this.userData.push({ id, ...createUserdto });
-
-    return {
-      message: 'User created successfully!',
-      newUser,
-    };
+    return this.userData.push({ id, ...createUserdto });
   }
 
   updateUser(id: string, updateUserDto: UpdateUserDto) {
